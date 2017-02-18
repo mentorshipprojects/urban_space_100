@@ -23,6 +23,7 @@ public class Urban {
         System.out.println("Enter date and time in the format MM-dd");
         System.out.println("For example, it is now " + format.format(new Date()));
         Date date = null;
+        int price2 = 0;
         while (date == null) {
             String line = userInput.nextLine();
             try {
@@ -33,8 +34,7 @@ public class Urban {
         }
         Format form = new SimpleDateFormat("MM-dd");
         String dat = form.format(date);
-        List valid = Arrays.asList("12-12", "12-13");
-
+        List valid = Arrays.asList("12-12", "12-13", "01-01", "17-02", "07-01", "08-03", "01-04", "02-04", "16-05");
 
 
         if (valid.contains(dat)) {
@@ -78,15 +78,38 @@ public class Urban {
                     }
 
                 case 2:
-                    a = 2;
-                    break;
-                default:
-                    System.out.println("Please type 1 or 2 ");
-                    break;
+                    System.out.println("Our menu");
+                    System.out.println("Please type 1 if you want to have soup");
+                    System.out.println("Please type 2 if you want to have soft drink ");
+                    System.out.println("Please type 3 if you want to have meat dishes ");
+                    System.out.println("Please type 4 if you want to have seafood");
+                    System.out.println("Please type 5 if you want to have steak ");
+                    System.out.println("Please type 6 if you want to have side dishes");
+                    System.out.println("Please type 7 if you want to have dessert ");
+                    int c = userInput.nextInt();
+                    switch (c) {
+                        case 1:
+                            System.out.println("Please type 2");
+                            break;
+                        case 2:
+                            System.out.println("Please type 1 if you want to have coca-cola");
+                            System.out.println("Please type 2 if you want to have sprite ");
+                            int drink = userInput.nextInt();
+                            if (drink == 1) {
+                                price2=10;
+                            }else{
+                                price2=15;
+                            }
+                            System.out.println("Your order is " + price2);
+
+                            break;
+                        default:
+                            System.out.println("Please type 1 or 2 ");
+                            break;
+                    }
+
+
             }
-
-
-
         }
     }
 }
